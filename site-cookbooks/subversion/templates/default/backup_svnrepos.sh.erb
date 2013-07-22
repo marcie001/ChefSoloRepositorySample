@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DAY=`date +%d`
+while IFS= read -r -d '' file; do
+  PROJNAME=`basename "$file"`
+  svnadmin hotcopy "$file" "<%= node['subversion']['backup_directory'] %>/$PROJNAME"
+  cd "<%= node['subversion']['backup_directory'] %>"
+  tar czf "$PROJNAME$DAY.tar.gz" "$PROJNAME"
+  rm -Rf "$PROJNAME"
+done < <(find <%= node['subversion']['repos_directory'] %> -maxdepth 1 -mindepth 1 -type d -print0)
