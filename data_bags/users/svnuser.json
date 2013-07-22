@@ -1,0 +1,12 @@
+{
+  "id" : "svnuser",
+  "name" : "svnuser",
+  "groups" : ["svnuser"],
+  "home" : "/home/svnuser",
+  "shell" : "/bin/bash",
+  "envfile" : "/home/svnuser/.profile",
+  "ssh-keys" : [
+    "command=\"/usr/bin/svnserve -t --tunnel-user=marcie\",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC301gtKJCXxHHpJKvvIP7meCwcJTS22O+4/B/5+ZgKMdqze1tg+vYxFNTTBVdyN9WDXcB+D3aBYZXH5QxTCD+c+sFM9pXZUeBFrBTq/yKg2M7t6SVErx1j45kFrPX5ZerUwAscFXaU3Y0r5HxPfIBlaDjujbvF1IRnPJmpZr3l4wtOHKZgA9g+lc5RUtftAhD8omExk2VUGqCx5og/6FkwkaSGyFXNpbitOOun9pw6odZrOx5Rn7qVDYZG/77/l6M5LmsyGQCEum/Jbmb75G/gJLrb2S6yjcB9I7dSCeUxQZFwY7eBUO5bG3DMVhR8MOUuRvGnthUh3AY90xwtya8V marcie",
+    "command=\"/usr/bin/svnserve -t --tunnel-user=tomcat\",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGYfsh47UqI8Yn5MrDhO21nvJqNjM/wnY9UzPRvuc8vdLDfoEEB+HGQT9V5wbYdshPlPP9n+tjvhyR/lLZtJLGK4bxmVTU28vBVWaJ4u46CrR9VQ8NBm4hHNqlhj5iAm1K5Qza8ay//DcYyiMuT+utKEpa9EbmSMtROrXq2moUuSwaU5ADaAZ8dRwGxlu+e4qNwLhj8CrXoIpE2uSU3S9AH1Btpnj68vrLpGJjgzBwoXBGHGs/LROi45JJ55BnSTpGRot1voiFXLv8wF3IyLaDk7xSDiYqc+i3DmNYtT1Qgme33el1KmYwP6CAfd05EvyY3YZosVSc/RYfSqfZyAtX tomcat"
+  ]
+}

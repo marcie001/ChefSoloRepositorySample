@@ -1,0 +1,8 @@
+{
+  "id" : "rhodecode",
+  "name" : "rhodecode",
+  "groups" : ["rhodecode"],
+  "home" : "/home/rhodecode",
+  "shell" : "/bin/bash",
+  "envfile" : "/home/rhodecode/.profile"
+}

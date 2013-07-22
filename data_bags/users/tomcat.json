@@ -1,0 +1,12 @@
+{
+  "id" : "tomcat",
+  "name" : "tomcat",
+  "groups" : ["tomcat"],
+  "home" : "/usr/local/tomcat",
+  "shell" : "/bin/bash",
+  "password" : "$1$CDSFm0Am$UwP/CXu8CmBigsNIumOoJ/",
+  "_password" : "H&b1C*S4/f|S+K",
+  "mode" : "0775",
+  "envfile" : "/usr/local/tomcat/.profile",
+  "ssh-keys" : ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGYfsh47UqI8Yn5MrDhO21nvJqNjM/wnY9UzPRvuc8vdLDfoEEB+HGQT9V5wbYdshPlPP9n+tjvhyR/lLZtJLGK4bxmVTU28vBVWaJ4u46CrR9VQ8NBm4hHNqlhj5iAm1K5Qza8ay//DcYyiMuT+utKEpa9EbmSMtROrXq2moUuSwaU5ADaAZ8dRwGxlu+e4qNwLhj8CrXoIpE2uSU3S9AH1Btpnj68vrLpGJjgzBwoXBGHGs/LROi45JJ55BnSTpGRot1voiFXLv8wF3IyLaDk7xSDiYqc+i3DmNYtT1Qgme33el1KmYwP6CAfd05EvyY3YZosVSc/RYfSqfZyAtX tomcat"]
+}

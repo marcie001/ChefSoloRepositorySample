@@ -1,0 +1,12 @@
+{
+  "id" : "redmine",
+  "name" : "redmine",
+  "groups" : ["redmine"],
+  "home" : "/var/redmine",
+  "shell" : "/bin/bash",
+  "envfile" : "/var/redmine/.profile",
+  "mode" : "0775",
+  "password" : "$1$CDSFm0Am$UwP/CXu8CmBigsNIumOoJ/",
+  "_password" : "H&b1C*S4/f|S+K",
+  "ssh-keys" : ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQBIz9ecU09bcNJXJyCXe2Pr++Rd7eh+BXG8Gjxr+zQ0DgDmjwhEABTsv99BEYlnrifsV3n3OCMpRLH/2NInBBDslkCNUalDLQD05EZ7sVGqeoQvw0CnZHnWSDLvnEnMKvZL/rBURNXuxoV1MdCKU6LSouxK+yjMiw1Kx9gosLlLgcX577IMaPlVeeeSirGbUqlHw4LQvG/vgm+xN8A4HBpa/qPj7lOQZvLTVFhZx44GG7cJm2jF8yFBliaINHx0cmtyG/FeVgoIB4eIL9fLb59v7FrLkPUmngf5QVreZPfqW+O4y+uOPWRDjQDKembgE5QteTMcoAh626sUvebqRh redmine"]
+}
