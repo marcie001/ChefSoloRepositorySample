@@ -1,4 +1,10 @@
 {
+  "java" : {
+    "install_flavor" : "oracle",
+    "oracle" : {
+      "accept_oracle_download_terms" : true
+    }
+  },
   "iptables-setting" : {
     "rules" : [
       "-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT",
@@ -11,10 +17,16 @@
       "tomcat", "redmine", "rhodecode", "svnuser", "marcie"
     ]
   },
+  "tomcat" : {
+    "version" : "6.0.37",
+    "catalina_opts" : "-server -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xmx512M -Xms512M -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -Xss64M  -XX:SurvivorRatio=2 -XX:PermSize=64M -XX:MaxPermSize=64M -Xloggc:$CATALINA_HOME/logs/gc.`date '+%Y-%m-%d-%H%M%S'`.log"
+  },
   "run_list" : [
     "recipe[iptables-setting]",
     "recipe[zsh]",
     "recipe[users]",
-    "recipe[subversion]"
+    "recipe[subversion]",
+    "recipe[java]",
+    "recipe[tomcat]"
   ]
 }
