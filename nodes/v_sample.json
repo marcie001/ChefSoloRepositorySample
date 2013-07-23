@@ -78,6 +78,35 @@
       }
     }
   },
+  "nginx" : {
+    "servers" : {
+      "www.qusco.cc" : {
+        "server_name" : "www.qusco.cc",
+        "ssl" : false,
+        "locations" : {
+          "/" : {
+            "root" : "/usr/share/nginx/html",
+            "index" : ["index.html", "index.htm"]
+          },
+          "/sns/" : {
+            "include" : "proxy.conf",
+            "proxy_pass" : "http://localhost:8080"
+          },
+          "/rhodecode/" : {
+            "include" : "proxy.conf",
+            "proxy_pass" : "http://127.0.0.1:5000"
+          },
+          "/redmine/" : {
+            "include" : "proxy.conf",
+            "proxy_pass" : "http://127.0.0.1:3000"
+          },
+          "~ /\\.ht" : {
+            "deny" :  "all"
+          }
+        }
+      }
+    }
+  },
   "run_list" : [
     "recipe[iptables-setting]",
     "recipe[zsh]",
@@ -85,6 +114,7 @@
     "recipe[subversion]",
     "recipe[java]",
     "recipe[tomcat]",
-    "recipe[postgresql]"
+    "recipe[postgresql]",
+    "recipe[nginx]"
   ]
 }

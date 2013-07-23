@@ -1,0 +1,28 @@
+server {
+    listen       <%= @server['ssl'] ? 443 : 80 %>;
+    server_name  <%= @server['server_name'] %>;
+
+    charset koi8-r;
+    access_log  /var/log/nginx/<%= @server['server_name'] %>.access.log  main;
+    error_log  /var/log/nginx/<%= @server['server_name'] %>.error.log  error;
+
+    <% if @server['ssl'] %>
+    ssl                  on;
+    ssl_certificate      /etc/nginx/cert.pem;
+    ssl_certificate_key  /etc/nginx/cert.key;
+
+    ssl_session_timeout  5m;
+
+    ssl_protocols  SSLv2 SSLv3 TLSv1;
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers   on;
+    <% end %>
+
+    <% @server['locations'].each do |id, location| %>
+    location <%= id %> {
+        <% location.each do |key, value| %>
+        <%= key %>  <%= Array(value).join ' ' %>;
+        <% end %>
+    }
+    <% end %>
+}

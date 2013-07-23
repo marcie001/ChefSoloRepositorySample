@@ -1,0 +1,5 @@
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/<%= @node[:platform_version].to_i %>/<%= @node[:kernel][:machine] %>/
+gpgcheck=0
+enabled=1
