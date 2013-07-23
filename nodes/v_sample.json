@@ -21,12 +21,70 @@
     "version" : "6.0.37",
     "catalina_opts" : "-server -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xmx512M -Xms512M -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -Xss64M  -XX:SurvivorRatio=2 -XX:PermSize=64M -XX:MaxPermSize=64M -Xloggc:$CATALINA_HOME/logs/gc.`date '+%Y-%m-%d-%H%M%S'`.log"
   },
+  "postgresql" : {
+    "users" : {
+      "paffe" : {
+        "name" : "paffe",
+        "password" : "password",
+        "createdb" : false,
+        "createrole" : false,
+        "superuser" : false,
+        "login" : true,
+        "replication" : false
+      },
+      "redmine" : {
+        "name" : "redmine",
+        "password" : "password",
+        "createdb" : false,
+        "createrole" : false,
+        "superuser" : false,
+        "login" : true,
+        "replication" : false
+      },
+      "rhodecode" : {
+        "name" : "rhodecode",
+        "password" : "password",
+        "createdb" : false,
+        "createrole" : false,
+        "superuser" : false,
+        "login" : true,
+        "replication" : false
+      }
+    },
+    "databases" : {
+      "sns" : {
+        "name" : "sns",
+        "encoding" : "UTF8",
+        "collate" : "ja_JP.UTF-8",
+        "ctype" : "ja_JP.UTF-8",
+        "template" : "template0",
+        "owner" : "paffe"
+      },
+      "redmine" : {
+        "name" : "redmine",
+        "encoding" : "UTF8",
+        "collate" : "ja_JP.UTF-8",
+        "ctype" : "ja_JP.UTF-8",
+        "template" : "template0",
+        "owner" : "redmine"
+      },
+      "rhodecode" : {
+        "name" : "rhodecode",
+        "encoding" : "UTF8",
+        "collate" : "ja_JP.UTF-8",
+        "ctype" : "ja_JP.UTF-8",
+        "template" : "template0",
+        "owner" : "rhodecode"
+      }
+    }
+  },
   "run_list" : [
     "recipe[iptables-setting]",
     "recipe[zsh]",
     "recipe[users]",
     "recipe[subversion]",
     "recipe[java]",
-    "recipe[tomcat]"
+    "recipe[tomcat]",
+    "recipe[postgresql]"
   ]
 }
