@@ -10,7 +10,7 @@
 remote_file "#{Chef::Config[:file_cache_path]}/pgdg-centos92-9.2-6.noarch.rpm" do
   source "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-6.noarch.rpm"
   not_if "rpm -qa | grep -q '^pgdg-centos92-9.2'"
-  notifies :install, "rpm_package[pgdg-centos92]", :immediately
+  #notifies :install, "rpm_package[pgdg-centos92]", :immediately
 end
 
 rpm_package "pgdg-centos92" do
@@ -19,21 +19,18 @@ rpm_package "pgdg-centos92" do
   action :install
 end
 
+execute 'sed -i "s/enabled=1/enabled=0/" /etc/yum.repos.d/pgdg-92-centos.repo'
+
 file "pgdg-centos92-cleanup" do
   path "#{Chef::Config[:file_cache_path]}/pgdg-centos92-9.2-6.noarch.rpm"
   action :delete
 end
 
-package 'postgresql92-server' do
-  action :install
-end
-
-package 'postgresql92-contrib' do
-  action :install
-end
-
-package 'postgresql92-devel' do
-  action :install
+%w(postgresql92-server postgresql92-contrib postgresql92-devel).each do |pkg|
+  package pkg do
+    action :install
+    options "--enablerepo=pgdg92"
+  end
 end
 
 execute "/sbin/service postgresql-9.2 initdb" do
