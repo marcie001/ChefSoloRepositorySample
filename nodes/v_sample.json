@@ -117,6 +117,7 @@
     "recipe[tomcat]",
     "recipe[postgresql]",
     "recipe[nginx]",
-    "recipe[tmux]"
+    "recipe[tmux]",
+    "recipe[rhodecode]"
   ]
 }
